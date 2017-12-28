@@ -1,6 +1,5 @@
 /*
- * Test program to blink an LED for confirming that Thumb/C
- * code mixing works.
+ * Simple firmware for an alarm clock.
  *
  * Copyright William Ransohoff, Vivonomicon, LLC, 2017
  *
@@ -52,7 +51,7 @@ reset_handler:
 
 /*
  * A 'main' method to branch to after initialization stuff is
- * completed by the Reset handler. This is the core program.
+ * completed by the Reset handler. This is ostensibly the core program.
  */
 .section .text.main
 .weak main

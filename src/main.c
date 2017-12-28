@@ -1,7 +1,9 @@
 #include "main.h"
 
-/**
- * Main program. For now, just a test to blink some LEDs.
+/*
+ * Main program. First, run initial setup to set pin functions
+ * and enable clocks. Then clear persistent values, and enter the
+ * main 'alarm clock' loop.
  */
 int main(void) {
     // Enable the GPIOA peripheral's clock.
@@ -114,7 +116,8 @@ int main(void) {
         // Display the framebuffer.
         i2c_display_framebuffer(I2C1_BASE, &oled_fb);
 
-        // Delay ~500ms.
+        // Delay ~500ms. But this is really really bad for input detection
+        // since I'm not using hardware interrupts. So...don't delay.
         //delay_us(500000);
     }
 }
